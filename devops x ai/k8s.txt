@@ -1,0 +1,1 @@
+LocalFix is a platform that helps local authorities manage and resolve issues in their communities efficiently. It provides tools for reporting, tracking, and addressing local problems such as potholes, graffiti, and broken streetlights.

@@ -1,0 +1,62 @@
+# DevOps x AI Setup Guide
+
+## Prerequisites
+
+Check your Python version:
+```bash
+python --version
+```
+
+## Installation Options
+
+Choose one of the following methods to set up the application:
+
+---
+
+### Option A: Docker (Recommended for Quick Start)
+
+Pull and run the pre-built Docker image:
+```bash
+docker run -p 8000:8000 -e OLLAMA_HOST="http://host.docker.internal:11434" --name rag-api -d ragib100/rag-api
+```
+
+**Note:** Make sure Ollama is running on your host machine at port 11434
+
+---
+
+### Option B: Manual Installation
+
+#### 1. Install Ollama
+Install Ollama on your system from [ollama.ai](https://ollama.ai)
+
+#### 2. Start Ollama Service
+```bash
+ollama serve
+```
+
+#### 3. Pull the TinyLlama Model
+```bash
+ollama pull tinyllama
+```
+
+#### 4. Install Python Dependencies
+```bash
+pip install fastapi uvicorn chromadb ollama
+```
+
+#### 5. Create Embeddings
+```bash
+python embed.py
+```
+
+#### 6. Run the Application
+```bash
+uvicorn app:app --reload
+```
+
+---
+
+## Notes
+- Make sure Ollama service is running before starting the application
+- The `--reload` flag enables auto-reload during development
+- Docker option requires Ollama to be installed and running on the host machine
